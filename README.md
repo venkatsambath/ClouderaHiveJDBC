@@ -1,0 +1,3 @@
+# ClouderaHiveJDBC
+# ClouderaHiveJDBC
+# Hive-JDBC
