@@ -6,21 +6,25 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class HiveJDBCExample {
-    static String JDBCDriver = "com.cloudera.hive.jdbc41.HS2Driver";
-    static String ConnectionURL = "jdbc:hive2://host:10000;AuthMech=1;KrbRealm=Example" +
-            ".COM;KrbHostFQDN=host;KrbServiceName=hive;LogLevel=6;" +
-            "LogPath=/Users/venkat/logs;RowsFetchedPerBlock=1000";
+    static String JDBCDriver = "com.cloudera.hive.jdbc.HS2Driver";
+    static String ConnectionURL = "jdbc:hive2://host-10-17-102-106.coe.cloudera.com:10000;AuthMech=1;KrbRealm=C6CITIDSE" +
+            ".COM;KrbHostFQDN=host-10-17-102-106.coe.cloudera.com;KrbServiceName=hive;LogLevel=6;" +
+            "LogPath=/Users/svenkataramanasam/logs;RowsFetchedPerBlock=10000";
     public static void main(String[] args) {
         Connection con = null; Statement stmt = null; ResultSet rs = null;
-        String query = "select * from $table";
         try {
             Class.forName(JDBCDriver);
             con = DriverManager.getConnection(ConnectionURL);
             stmt = con.createStatement();
-            stmt.setFetchSize(1000);
-            rs = stmt.executeQuery("select * from airline_data.airlines_240k");
+            stmt.setFetchSize(10000);
+            rs = stmt.executeQuery("select * from airline_data.airlines_1million limit 370000");
+            long time_1 = System.currentTimeMillis();
             while(rs.next()) {
-                System.out.printf(rs.getString(1)); }
+               // System.out.printf(rs.getString(1));
+            }
+            long time_2 = System.currentTimeMillis();
+            long difference = time_1 - time_2;
+            System.out.println( difference + "milliseconds" );
         } catch (SQLException se) {
             se.printStackTrace();
         } catch (Exception e) {
@@ -35,5 +39,6 @@ public class HiveJDBCExample {
             try { if (con!=null) {con.close();}}
             catch (SQLException se3) {se3.printStackTrace();}
         }
+
     }
 }

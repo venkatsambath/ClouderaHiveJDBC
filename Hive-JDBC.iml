@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="file://$USER_HOME$/Downloads/ClouderaHiveJDBC-2.6.9.1011/ClouderaHiveJDBC41-2.6.9.1011" />
@@ -15,6 +15,16 @@
         <JAVADOC />
         <SOURCES />
         <jarDirectory url="file://$USER_HOME$/Downloads/ClouderaHiveJDBC-2.6.9.1011/ClouderaHiveJDBC41-2.6.9.1011" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$USER_HOME$/Downloads/ClouderaHiveJDBC-2.6.11.1014/ClouderaHiveJDBC42-2.6.11.1014" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$USER_HOME$/Downloads/ClouderaHiveJDBC-2.6.11.1014/ClouderaHiveJDBC42-2.6.11.1014" recursive="false" />
       </library>
     </orderEntry>
   </component>
