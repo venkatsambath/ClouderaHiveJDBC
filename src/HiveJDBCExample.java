@@ -7,8 +7,8 @@ import java.sql.Statement;
 
 public class HiveJDBCExample {
     static String JDBCDriver = "com.cloudera.hive.jdbc.HS2Driver";
-    static String ConnectionURL = "jdbc:hive2://host-10-17-102-106.coe.cloudera.com:10000;AuthMech=1;KrbRealm=C6CITIDSE" +
-            ".COM;KrbHostFQDN=host-10-17-102-106.coe.cloudera.com;KrbServiceName=hive;LogLevel=6;" +
+    static String ConnectionURL = "jdbc:hive2://xxx:10000;AuthMech=1;KrbRealm=C6CITIDSE" +
+            ".COM;KrbHostFQDN=xxx;KrbServiceName=hive;LogLevel=6;" +
             "LogPath=/Users/svenkataramanasam/logs;RowsFetchedPerBlock=10000";
     public static void main(String[] args) {
         Connection con = null; Statement stmt = null; ResultSet rs = null;
